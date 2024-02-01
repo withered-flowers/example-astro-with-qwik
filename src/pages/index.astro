@@ -1,0 +1,14 @@
+---
+import BaseLayout from "@/layouts/base.astro";
+import Wrapper from "@/components/jokes/wrapper.tsx";
+import { fetchRandomJoke } from "@/services/jokes";
+
+const joke = await fetchRandomJoke();
+---
+
+<BaseLayout title="Hello World">
+	<section class="p-4 bg-neutral-100 min-w-full min-h-dvh">
+		<h1 class="font-semibold text-xl">Main Pages</h1>
+		<Wrapper joke={joke} />
+	</section>
+</BaseLayout>
